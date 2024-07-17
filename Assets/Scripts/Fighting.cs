@@ -8,11 +8,22 @@ public class Fighting : MonoBehaviour
     [Header("Activation")]
     public GameObject DrawCanvas; // Reference to the Canvas
     public bool isDrawing = false;
-    public GameObject drawCircle;
     public Animator handsAnimation;
     public RawImage drawSurface;
-    public Texture2D drawingTexture;
+    public GameObject DrawCircle;
+    private Texture2D drawingTexture;
     private Vector2 previousMousePos;
+    public FirstPersonController fpsScript;
+    public Animator earthAnimation;
+
+    // Customizable line properties
+    public Color lineColor = Color.black;
+    public int lineThickness = 2;
+
+    // Shape templates
+    public Texture2D[] shapeTemplates;
+    public string[] shapeTemplateNames; // Names of the shape templates
+    public float similarityThreshold = 0.8f;
 
     void Start()
     {
@@ -23,13 +34,7 @@ public class Fighting : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F) && !isDrawing)
         {
-
-            handsAnimation.SetTrigger("Signing");
-            DrawCanvas.SetActive(true);
-            drawCircle.SetActive(true);
-            isDrawing = true;
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
+            StartDrawingSession();
         }
 
         if (isDrawing)
@@ -56,10 +61,25 @@ public class Fighting : MonoBehaviour
         drawingTexture.Apply();
     }
 
+    void StartDrawingSession()
+    {
+        fpsScript.lockLook=true;
+        handsAnimation.SetTrigger("Signing");
+        DrawCanvas.SetActive(true);
+        DrawCircle.SetActive(true);
+        isDrawing = true;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+
+        // Clear the drawing surface when starting a new drawing session
+        ClearDrawingSurface();
+    }
+
     void HandleDrawing()
     {
         if (Input.GetMouseButtonDown(0))
         {
+            Debug.Log("Started Drawing");
             previousMousePos = Input.mousePosition;
         }
 
@@ -77,12 +97,13 @@ public class Fighting : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             Debug.Log("Drawing complete. Analyze the drawn points and cast the spell.");
-
+            RecognizeShape();
             // Reset the drawing state
-            handsAnimation.SetTrigger("SigningOver");
             isDrawing = false;
+            fpsScript.lockLook=false;
+            handsAnimation.SetTrigger("SigningOver");
             DrawCanvas.SetActive(false);
-            drawCircle.SetActive(false);
+            DrawCircle.SetActive(false);
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
         }
@@ -109,7 +130,7 @@ public class Fighting : MonoBehaviour
 
         while (true)
         {
-            drawingTexture.SetPixel(x0, y0, Color.blue);
+            DrawThickPixel(x0, y0, lineThickness);
 
             if (x0 == x1 && y0 == y1) break;
             int e2 = err * 2;
@@ -127,4 +148,95 @@ public class Fighting : MonoBehaviour
 
         drawingTexture.Apply();
     }
+
+    void DrawThickPixel(int x, int y, int thickness)
+    {
+        for (int i = -thickness; i <= thickness; i++)
+        {
+            for (int j = -thickness; j <= thickness; j++)
+            {
+                if (x + i >= 0 && x + i < drawingTexture.width && y + j >= 0 && y + j < drawingTexture.height)
+                {
+                    drawingTexture.SetPixel(x + i, y + j, lineColor);
+                }
+            }
+        }
+    }
+
+    void RecognizeShape()
+{
+    float bestMatchScore = 0f;
+    string bestMatchName = "";
+
+    for (int i = 0; i < shapeTemplates.Length; i++)
+    {
+        float similarity = CompareTextures(drawingTexture, shapeTemplates[i]);
+        if (similarity > bestMatchScore)
+        {
+            bestMatchScore = similarity;
+            bestMatchName = shapeTemplateNames[i];
+        }
+        Debug.Log("Shape " + shapeTemplateNames[i] + ": Similarity = " + similarity);
+    }
+
+    if (!string.IsNullOrEmpty(bestMatchName) && bestMatchScore >= similarityThreshold)
+    {
+        Debug.Log("Shape recognized: " + bestMatchName + " with score " + bestMatchScore);
+        if(bestMatchName=="Earth")
+        {
+            earthAnimation.SetTrigger("EarthAppear");
+        }
+    }
+    else
+    {
+        Debug.Log("No matching shape found.");
+    }
+}
+
+float CompareTextures(Texture2D drawnTexture, Texture2D templateTexture)
+{
+    int width = 64;  // Normalize width
+    int height = 64; // Normalize height
+
+    // Resize textures to the same size
+    Texture2D resizedDrawnTexture = ResizeTexture(drawnTexture, width, height);
+    Texture2D resizedTemplateTexture = ResizeTexture(templateTexture, width, height);
+
+    Color[] drawnPixels = resizedDrawnTexture.GetPixels();
+    Color[] templatePixels = resizedTemplateTexture.GetPixels();
+    int matchingPixels = 0;
+    int drawnPixelsCount = 0;
+    int templatePixelsCount = 0;
+
+    for (int i = 0; i < drawnPixels.Length; i++)
+    {
+        bool drawnPixel = drawnPixels[i].a > 0.1f;
+        bool templatePixel = templatePixels[i].a > 0.1f;
+
+        if (drawnPixel)
+            drawnPixelsCount++;
+        if (templatePixel)
+            templatePixelsCount++;
+        if (drawnPixel && templatePixel)
+        {
+            matchingPixels++;
+        }
+    }
+
+    // Calculate similarity as a proportion of matching pixels to total template pixels
+    float similarity = (float)matchingPixels / Mathf.Max(drawnPixelsCount, templatePixelsCount);
+    return similarity;
+}
+
+Texture2D ResizeTexture(Texture2D source, int targetWidth, int targetHeight)
+{
+    RenderTexture rt = new RenderTexture(targetWidth, targetHeight, 24);
+    RenderTexture.active = rt;
+    Graphics.Blit(source, rt);
+    Texture2D result = new Texture2D(targetWidth, targetHeight);
+    result.ReadPixels(new Rect(0, 0, targetWidth, targetHeight), 0, 0);
+    result.Apply();
+    return result;
+}
+
 }
