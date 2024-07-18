@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Fighting : MonoBehaviour
 {
     [Header("Activation")]
-    public GameObject DrawCanvas; // Reference to the Canvas
+    public GameObject DrawCanvas;
     public bool isDrawing = false;
     public Animator handsAnimation;
     public RawImage drawSurface;
@@ -24,7 +24,7 @@ public class Fighting : MonoBehaviour
 
     [Header("Shapes Templates")]
     public Texture2D[] shapeTemplates;
-    public string[] shapeTemplateNames; // Names of the shape templates
+    public string[] shapeTemplateNames;
     public float similarityThreshold = 0.8f;
 
     [Header("Signing Prefabs")]
@@ -80,8 +80,6 @@ public class Fighting : MonoBehaviour
         isDrawing = true;
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
-
-        // Clear the drawing surface when starting a new drawing session
         ClearDrawingSurface();
     }
 
@@ -108,7 +106,6 @@ public class Fighting : MonoBehaviour
         {
             Debug.Log("Drawing complete. Analyze the drawn points and cast the spell.");
             RecognizeShape();
-            // Reset the drawing state
             isDrawing = false;
             fpsScript.lockLook=false;
             handsAnimation.SetTrigger("SigningOver");
