@@ -15,15 +15,24 @@ public class Fighting : MonoBehaviour
     private Vector2 previousMousePos;
     public FirstPersonController fpsScript;
     public Animator earthAnimation;
+    public Animator airAnimation;
+    public Animator fireAnimation;
 
-    // Customizable line properties
+    [Header("Drawing properties")]
     public Color lineColor = Color.black;
     public int lineThickness = 2;
 
-    // Shape templates
+    [Header("Shapes Templates")]
     public Texture2D[] shapeTemplates;
     public string[] shapeTemplateNames; // Names of the shape templates
     public float similarityThreshold = 0.8f;
+
+    [Header("Signing Prefabs")]
+    public Vector3 instantiateLocation;
+    public RaycastCamera raycastScript;
+    public GameObject earthPrefab;
+    public GameObject airPrefab;
+
 
     void Start()
     {
@@ -32,6 +41,7 @@ public class Fighting : MonoBehaviour
 
     void Update()
     {
+        instantiateLocation = raycastScript.lastHitPoint;
         if (Input.GetKeyDown(KeyCode.F) && !isDrawing)
         {
             StartDrawingSession();
@@ -185,6 +195,16 @@ public class Fighting : MonoBehaviour
         if(bestMatchName=="Earth")
         {
             earthAnimation.SetTrigger("EarthAppear");
+            GameObject earthPrefabInstance = Instantiate(earthPrefab, instantiateLocation, Quaternion.identity);
+        }
+        if(bestMatchName=="Air")
+        {
+            airAnimation.SetTrigger("AirAppear");
+            airPrefab.SetActive(true);
+        }
+        if(bestMatchName=="Fire")
+        {
+            fireAnimation.SetTrigger("FireAppear");
         }
     }
     else
