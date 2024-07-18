@@ -17,6 +17,7 @@ public class Fighting : MonoBehaviour
     public Animator earthAnimation;
     public Animator airAnimation;
     public Animator fireAnimation;
+    public Animator waterAnimation;
 
     [Header("Drawing properties")]
     public Color lineColor = Color.black;
@@ -203,7 +204,11 @@ public class Fighting : MonoBehaviour
         {
             fireAnimation.SetTrigger("FireAppear");
         }
-    }
+        if (bestMatchName == "Water")
+        {
+            waterAnimation.SetTrigger("WaterAppear");
+        }
+        }
     else
     {
         Debug.Log("No matching shape found.");
