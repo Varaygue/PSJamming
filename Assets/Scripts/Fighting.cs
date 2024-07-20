@@ -14,10 +14,7 @@ public class Fighting : MonoBehaviour
     private Texture2D drawingTexture;
     private Vector2 previousMousePos;
     public FirstPersonController fpsScript;
-    public Animator earthAnimation;
-    public Animator airAnimation;
-    public Animator fireAnimation;
-    public Animator waterAnimation;
+    public Animator signsAnimation;
 
     [Header("Drawing properties")]
     public Color lineColor = Color.black;
@@ -192,28 +189,45 @@ public class Fighting : MonoBehaviour
         Debug.Log("Shape recognized: " + bestMatchName + " with score " + bestMatchScore);
         if(bestMatchName=="Earth")
         {
-            earthAnimation.SetTrigger("EarthAppear");
             GameObject earthPrefabInstance = Instantiate(earthPrefab, instantiateLocation, Quaternion.identity);
+            StartCoroutine(SignsAnimation("EarthAppear", "EarthDisappear"));
         }
         if(bestMatchName=="Air")
         {
-            airAnimation.SetTrigger("AirAppear");
+            StartCoroutine(SignsAnimation("AirAppear", "AirDisappear"));
             airPrefab.SetActive(true);
         }
         if(bestMatchName=="Fire")
         {
-            fireAnimation.SetTrigger("FireAppear");
+            StartCoroutine(SignsAnimation("FireAppear", "FireDisappear"));
         }
         if (bestMatchName == "Water")
         {
-            waterAnimation.SetTrigger("WaterAppear");
+            StartCoroutine(SignsAnimation("WaterAppear", "WaterDisappear"));
         }
-        }
+    }
     else
     {
         Debug.Log("No matching shape found.");
     }
 }
+
+IEnumerator SignsAnimation(string animationTrigger, string animationEnd)
+    {
+        signsAnimation.SetTrigger(animationTrigger);
+
+        if(animationTrigger=="AirAppear")
+        {
+            yield return new WaitForSeconds(3f);
+            signsAnimation.SetTrigger(animationEnd);
+            airPrefab.SetActive(false);
+        }
+        else
+        {
+            yield return new WaitForSeconds(3f);
+            signsAnimation.SetTrigger(animationEnd);
+        }
+    }
 
 float CompareTextures(Texture2D drawnTexture, Texture2D templateTexture)
 {
