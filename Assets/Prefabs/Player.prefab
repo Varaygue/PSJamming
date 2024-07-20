@@ -466,10 +466,7 @@ MonoBehaviour:
   drawSurface: {fileID: 1556971735710458631}
   DrawCircle: {fileID: 1434589010291298031}
   fpsScript: {fileID: 2268607669838482114}
-  earthAnimation: {fileID: 0}
-  airAnimation: {fileID: 0}
-  fireAnimation: {fileID: 0}
-  waterAnimation: {fileID: 0}
+  signsAnimation: {fileID: 0}
   lineColor: {r: 0.24858823, g: 0.0985226, b: 0.509434, a: 1}
   lineThickness: 10
   shapeTemplates:
@@ -518,6 +515,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7577012386079110265}
   - component: {fileID: 6356540289485786650}
+  - component: {fileID: 4139644631208416997}
   m_Layer: 0
   m_Name: HandR
   m_TagString: Untagged
@@ -525,21 +523,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7577012386079110265
-Transform:
+--- !u!224 &7577012386079110265
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5420134715133144374}
-  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.75, y: -0.3500061, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
-  m_ConstrainProportionsScale: 1
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 670258550904657589}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.75, y: -0.3500061}
+  m_SizeDelta: {x: 14.88, y: 17.39}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &6356540289485786650
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -592,6 +594,14 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!222 &4139644631208416997
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5420134715133144374}
+  m_CullTransparentMesh: 1
 --- !u!1 &6746050192094701086
 GameObject:
   m_ObjectHideFlags: 0

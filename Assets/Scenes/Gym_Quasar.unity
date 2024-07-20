@@ -1351,7 +1351,10 @@ MonoBehaviour:
       detected","value":{"$content":false,"$type":"System.Boolean"},"typeHandle":{"Identification":"System.Boolean,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"},{"name":"Player
       object","value":null,"typeHandle":{"Identification":"UnityEngine.GameObject,
-      UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
+      UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"},{"name":"Behaviour
+      checked","value":{"$content":false,"$type":"System.Boolean"},"typeHandle":{"Identification":"System.Boolean,
+      mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"},{"name":"Last
+      player pos","value":null,"typeHandle":{"Identification":null,"$version":"A"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
     _objectReferences: []
 --- !u!195 &365420758
 NavMeshAgent:
@@ -1367,7 +1370,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 1.5
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -1427,7 +1430,7 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 8
-  m_Height: 18
+  m_Height: 16
   m_Direction: 2
   m_Center: {x: 0, y: 0, z: 8}
 --- !u!1 &540790762
@@ -4114,6 +4117,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 6356540289485786650, guid: e5b3672a9e922394d9495833ca4181c1, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5464c881038b0954fb51a1d3f66499a5, type: 3}
     - target: {fileID: 6746050192094701086, guid: e5b3672a9e922394d9495833ca4181c1, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -4125,6 +4132,30 @@ PrefabInstance:
     - target: {fileID: 7009257254566124174, guid: e5b3672a9e922394d9495833ca4181c1, type: 3}
       propertyPath: m_Layer
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7577012386079110265, guid: e5b3672a9e922394d9495833ca4181c1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 7577012386079110265, guid: e5b3672a9e922394d9495833ca4181c1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 7577012386079110265, guid: e5b3672a9e922394d9495833ca4181c1, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 7577012386079110265, guid: e5b3672a9e922394d9495833ca4181c1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7577012386079110265, guid: e5b3672a9e922394d9495833ca4181c1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7577012386079110265, guid: e5b3672a9e922394d9495833ca4181c1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7705049000139368730, guid: e5b3672a9e922394d9495833ca4181c1, type: 3}
       propertyPath: m_Layer
