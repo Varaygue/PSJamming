@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class Fighting : MonoBehaviour
 {
+    [Header("Misc.")]
+    public Camera playerCamera;
+
     [Header("Activation")]
     public GameObject DrawCanvas;
     public bool isDrawing = false;
@@ -30,6 +33,8 @@ public class Fighting : MonoBehaviour
     public RaycastCamera raycastScript;
     public GameObject earthPrefab;
     public GameObject airPrefab;
+    public GameObject icePrefab;
+    public GameObject firePrefab;
 
 
     void Start()
@@ -199,10 +204,19 @@ public class Fighting : MonoBehaviour
         }
         if(bestMatchName=="Fire")
         {
+            GameObject fireProjectile = Instantiate(firePrefab, playerCamera.transform.position, playerCamera.transform.rotation);
+            FireProjectile fireScript = fireProjectile.GetComponent<FireProjectile>();
+            fireScript.Fire(playerCamera.transform.forward);
             StartCoroutine(SignsAnimation("FireAppear", "FireDisappear"));
         }
         if (bestMatchName == "Water")
         {
+            GameObject iceProjectile = Instantiate(icePrefab, playerCamera.transform.position, playerCamera.transform.rotation);
+            IceProjectile iceScript = iceProjectile.GetComponent<IceProjectile>();
+            if (iceScript != null)
+            {
+                iceScript.Fire(playerCamera.transform.forward);
+            }
             StartCoroutine(SignsAnimation("WaterAppear", "WaterDisappear"));
         }
     }

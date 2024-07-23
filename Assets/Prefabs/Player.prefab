@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5331709401790008866}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7714363689837390554}
   - component: {fileID: 2209873934358317422}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: DrawCircle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,7 +126,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8841536984158112971}
   - component: {fileID: 5411373294311056041}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: HandL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -212,7 +212,7 @@ GameObject:
   - component: {fileID: 28476289829807151}
   - component: {fileID: 223743164107893072}
   - component: {fileID: 4613623363259778290}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -334,7 +334,7 @@ GameObject:
   - component: {fileID: 2605815571888304910}
   - component: {fileID: 1916607326498002110}
   - component: {fileID: 2029046898728801007}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -460,6 +460,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33743c15b5bfa424cb4add3ac56aaba7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerCamera: {fileID: 28476289829807151}
   DrawCanvas: {fileID: 7705049000139368730}
   isDrawing: 0
   handsAnimation: {fileID: 2029046898728801007}
@@ -482,8 +483,10 @@ MonoBehaviour:
   similarityThreshold: 0.2
   instantiateLocation: {x: 0, y: 0, z: 0}
   raycastScript: {fileID: 4613623363259778290}
-  earthPrefab: {fileID: 7359028032056283516, guid: fe78df98ce0b25d4086f4300f8d123a3, type: 3}
+  earthPrefab: {fileID: 7947124201609674872, guid: fe78df98ce0b25d4086f4300f8d123a3, type: 3}
   airPrefab: {fileID: 1591537249774930017}
+  icePrefab: {fileID: 216363401652140743, guid: 8cb1731fac329494587c74b8a9f08450, type: 3}
+  firePrefab: {fileID: 6475955753459202349, guid: 63115eb3ec81b934db830f1160d5aeaa, type: 3}
 --- !u!95 &2029046898728801007
 Animator:
   serializedVersion: 5
@@ -516,7 +519,7 @@ GameObject:
   - component: {fileID: 7577012386079110265}
   - component: {fileID: 6356540289485786650}
   - component: {fileID: 4139644631208416997}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: HandR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -614,7 +617,7 @@ GameObject:
   - component: {fileID: 1006438235851207624}
   - component: {fileID: 4910414146340972815}
   - component: {fileID: 9026270017579416274}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -720,7 +723,7 @@ GameObject:
   - component: {fileID: 8539069211711256065}
   - component: {fileID: 729349587459533426}
   - component: {fileID: 1556971735710458631}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RawImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -793,7 +796,7 @@ GameObject:
   - component: {fileID: 985517136933010379}
   - component: {fileID: 8450221548200868691}
   - component: {fileID: 8215457285705689783}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: DrawingCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -934,6 +937,10 @@ PrefabInstance:
     - target: {fileID: 5858232598553139565, guid: d52237fe49ae301428d411b5238debf7, type: 3}
       propertyPath: m_Name
       value: AirBurst
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858232598553139565, guid: d52237fe49ae301428d411b5238debf7, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5858232598553139565, guid: d52237fe49ae301428d411b5238debf7, type: 3}
       propertyPath: m_IsActive
