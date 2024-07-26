@@ -5,13 +5,11 @@ public class RaycastCamera : MonoBehaviour
     public float rayLength = 10f;
     public Vector3 lastHitPoint;
     public bool hitDetected;
-    public GameObject IndicatorPrefab;
     public LayerMask layerMask;
     private GameObject indicatorInstance;
 
     void Start()
     {
-        indicatorInstance = Instantiate(IndicatorPrefab);
         layerMask = ~LayerMask.GetMask("IndicatorLayer");
     }
 
