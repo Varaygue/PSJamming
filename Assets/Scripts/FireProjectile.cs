@@ -23,5 +23,10 @@ public class FireProjectile : MonoBehaviour
             rb.velocity=Vector3.zero;
             areaOfDamage.SetActive(true);
         }
+
+        if(other.CompareTag("Enemy"))
+        {
+            Destroy(other.gameObject);
+        }
     }
 }

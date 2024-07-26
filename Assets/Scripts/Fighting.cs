@@ -91,6 +91,7 @@ public class Fighting : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             Debug.Log("Started Drawing");
+            Time.timeScale = 0.2f;
             previousMousePos = Input.mousePosition;
         }
 
@@ -116,6 +117,7 @@ public class Fighting : MonoBehaviour
             DrawCircle.SetActive(false);
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
+            Time.timeScale = 1f;
         }
     }
 
@@ -248,7 +250,6 @@ float CompareTextures(Texture2D drawnTexture, Texture2D templateTexture)
     int width = 64;  // Normalize width
     int height = 64; // Normalize height
 
-    // Resize textures to the same size
     Texture2D resizedDrawnTexture = ResizeTexture(drawnTexture, width, height);
     Texture2D resizedTemplateTexture = ResizeTexture(templateTexture, width, height);
 
