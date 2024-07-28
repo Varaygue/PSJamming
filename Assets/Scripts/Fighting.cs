@@ -22,6 +22,7 @@ public class Fighting : MonoBehaviour
     [Header("Drawing properties")]
     public Color lineColor = Color.black;
     public int lineThickness = 2;
+    public bool startedDrawing;
 
     [Header("Shapes Templates")]
     public Texture2D[] shapeTemplates;
@@ -39,6 +40,7 @@ public class Fighting : MonoBehaviour
 
     void Start()
     {
+        startedDrawing=false;
         InitializeDrawingSurface();
     }
 
@@ -92,6 +94,7 @@ public class Fighting : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             Debug.Log("Started Drawing");
+            startedDrawing = true;
             previousMousePos = Input.mousePosition;
         }
 
@@ -106,8 +109,9 @@ public class Fighting : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (startedDrawing==true&Input.GetKeyDown(KeyCode.F))
         {
+            startedDrawing = false;
             Debug.Log("Drawing complete. Analyze the drawn points and cast the spell.");
             RecognizeShape();
             isDrawing = false;
