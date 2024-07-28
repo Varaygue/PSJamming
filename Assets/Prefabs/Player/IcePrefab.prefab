@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 567198415884737915}
   - component: {fileID: 2952678669444681119}
   - component: {fileID: 430972032194729680}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: IcePrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -143,10 +143,10 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!1 &6371539403578476356
 GameObject:
@@ -160,7 +160,7 @@ GameObject:
   - component: {fileID: 1898555333843794732}
   - component: {fileID: 6020648284835122410}
   - component: {fileID: 942035368158750072}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,7 +177,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 3}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 591463412945234411}

@@ -88,10 +88,10 @@ public class Fighting : MonoBehaviour
 
     void HandleDrawing()
     {
+        Time.timeScale = 0.2f;
         if (Input.GetMouseButtonDown(0))
         {
             Debug.Log("Started Drawing");
-            Time.timeScale = 0.2f;
             previousMousePos = Input.mousePosition;
         }
 
@@ -106,7 +106,7 @@ public class Fighting : MonoBehaviour
             }
         }
 
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetKeyDown(KeyCode.Return))
         {
             Debug.Log("Drawing complete. Analyze the drawn points and cast the spell.");
             RecognizeShape();

@@ -9,6 +9,7 @@ TagManager:
   - Target
   - Ennemy Hurtbox
   - Player Hurtbox
+  - EarthPillar
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - UI
   - IndicatorLayer
   - Player
-  - 
+  - EarthPillar
   - 
   - 
   - 
