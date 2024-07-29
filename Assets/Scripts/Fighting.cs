@@ -11,7 +11,7 @@ public class Fighting : MonoBehaviour
     [Header("Activation")]
     public GameObject DrawCanvas;
     public bool isDrawing = false;
-    public Animator handsAnimation;
+    //public Animator handsAnimation;
     public RawImage drawSurface;
     public GameObject DrawCircle;
     private Texture2D drawingTexture;
@@ -79,7 +79,7 @@ public class Fighting : MonoBehaviour
     void StartDrawingSession()
     {
         fpsScript.lockLook=true;
-        handsAnimation.SetTrigger("Signing");
+        //handsAnimation.SetTrigger("Signing");
         DrawCanvas.SetActive(true);
         DrawCircle.SetActive(true);
         isDrawing = true;
@@ -116,7 +116,7 @@ public class Fighting : MonoBehaviour
             RecognizeShape();
             isDrawing = false;
             fpsScript.lockLook=false;
-            handsAnimation.SetTrigger("SigningOver");
+            //handsAnimation.SetTrigger("SigningOver");
             DrawCanvas.SetActive(false);
             DrawCircle.SetActive(false);
             Cursor.visible = false;

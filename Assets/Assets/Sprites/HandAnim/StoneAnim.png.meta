@@ -6,7 +6,7 @@ TextureImporter:
   serializedVersion: 12
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -34,27 +34,27 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
+    wrapU: 1
+    wrapV: 1
     wrapW: 0
-  nPOTScale: 1
+  nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 0
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 409.6
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 0
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -108,18 +108,524 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: StoneAnim_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2168
+        width: 495
+        height: 542
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 652488ee22a1d86488fc0f8980c55562
+      internalID: 65485308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneAnim_1
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 2168
+        width: 495
+        height: 542
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2522e51018d47cf4fbfb432450ccc8c9
+      internalID: 1315489109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneAnim_2
+      rect:
+        serializedVersion: 2
+        x: 990
+        y: 2168
+        width: 495
+        height: 542
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a05a2539315d02f459a6420d24c56773
+      internalID: -131841302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneAnim_3
+      rect:
+        serializedVersion: 2
+        x: 1485
+        y: 2168
+        width: 495
+        height: 542
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26b1f62f5085dc1409f9302162fd5427
+      internalID: 282466593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneAnim_4
+      rect:
+        serializedVersion: 2
+        x: 1980
+        y: 2168
+        width: 495
+        height: 542
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99949234f628be247947d16112ceaa81
+      internalID: 920405392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneAnim_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1626
+        width: 495
+        height: 542
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3521ab5358b2204486e8fdef901443d
+      internalID: 357839815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneAnim_6
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 1626
+        width: 495
+        height: 542
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea519cf65e5f3d5478f36c16213908f3
+      internalID: 338689858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneAnim_7
+      rect:
+        serializedVersion: 2
+        x: 990
+        y: 1626
+        width: 495
+        height: 542
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99c8509ec5979044c86c64ef7ed333e2
+      internalID: -175801134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneAnim_8
+      rect:
+        serializedVersion: 2
+        x: 1485
+        y: 1626
+        width: 495
+        height: 542
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a038fcc8d8117b4c8707486f00014f2
+      internalID: -1888629312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneAnim_9
+      rect:
+        serializedVersion: 2
+        x: 1980
+        y: 1626
+        width: 495
+        height: 542
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52177e13f7ca3a44282f23ee41734cf0
+      internalID: -822008032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneAnim_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1084
+        width: 495
+        height: 542
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eeecab22f4fa06f429567fea3f0d952d
+      internalID: 1447626200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneAnim_11
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 1084
+        width: 495
+        height: 542
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba93a3d2fde4019429bf1f4dc781dd5d
+      internalID: -1461221818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneAnim_12
+      rect:
+        serializedVersion: 2
+        x: 990
+        y: 1084
+        width: 495
+        height: 542
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c7ed759b8e7ac74ba311f39d4ca3e12
+      internalID: 192401892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneAnim_13
+      rect:
+        serializedVersion: 2
+        x: 1485
+        y: 1084
+        width: 495
+        height: 542
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48197e721d0ca0a46865b34c60ed75ba
+      internalID: -1296471683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneAnim_14
+      rect:
+        serializedVersion: 2
+        x: 1980
+        y: 1084
+        width: 495
+        height: 542
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4899c34d728455a458b09e3f59ee6380
+      internalID: 950163807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneAnim_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 542
+        width: 495
+        height: 542
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4f72c10ddded634e87ef2e1df1c8ca6
+      internalID: 1417791849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneAnim_16
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 542
+        width: 495
+        height: 542
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2455fe6a5c2e53b40a087a638333d979
+      internalID: -821831377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneAnim_17
+      rect:
+        serializedVersion: 2
+        x: 990
+        y: 542
+        width: 495
+        height: 542
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef4c2bbcdbe118945a67efad5d4e674c
+      internalID: -1550451033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneAnim_18
+      rect:
+        serializedVersion: 2
+        x: 1485
+        y: 542
+        width: 495
+        height: 542
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85fd75aa805a02f4aae034b98b30233f
+      internalID: 84517610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneAnim_19
+      rect:
+        serializedVersion: 2
+        x: 1980
+        y: 542
+        width: 495
+        height: 542
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4c0a5134a44b7b48b05d41542d1863b
+      internalID: 1182115918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneAnim_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 495
+        height: 542
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28dbf1dc469f92741919da5f7c17d9bb
+      internalID: 327068748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneAnim_21
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 0
+        width: 495
+        height: 542
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c84bd94b34be84247bc4ab96aa70c381
+      internalID: -107627202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneAnim_22
+      rect:
+        serializedVersion: 2
+        x: 990
+        y: 0
+        width: 495
+        height: 542
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c93f8c7e0334a0c4292fb330eecae041
+      internalID: 1612834888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      StoneAnim_0: 65485308
+      StoneAnim_1: 1315489109
+      StoneAnim_10: 1447626200
+      StoneAnim_11: -1461221818
+      StoneAnim_12: 192401892
+      StoneAnim_13: -1296471683
+      StoneAnim_14: 950163807
+      StoneAnim_15: 1417791849
+      StoneAnim_16: -821831377
+      StoneAnim_17: -1550451033
+      StoneAnim_18: 84517610
+      StoneAnim_19: 1182115918
+      StoneAnim_2: -131841302
+      StoneAnim_20: 327068748
+      StoneAnim_21: -107627202
+      StoneAnim_22: 1612834888
+      StoneAnim_3: 282466593
+      StoneAnim_4: 920405392
+      StoneAnim_5: 357839815
+      StoneAnim_6: 338689858
+      StoneAnim_7: -175801134
+      StoneAnim_8: -1888629312
+      StoneAnim_9: -822008032
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
